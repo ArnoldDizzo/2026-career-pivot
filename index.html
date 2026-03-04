@@ -5,11 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developer Roadmap 2026</title>
     <style>
-        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #0f172a; color: white; margin: 0; }
-        .card { background: #1e293b; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 15px rgba(0,0,0,0.3); text-align: center; border: 1px solid #334155; }
-        h1 { color: #38bdf8; margin-bottom: 0.5rem; }
-        p { color: #94a3b8; }
-        .status { margin-top: 1.5rem; padding: 0.5rem; background: #065f46; color: #34d399; border-radius: 6px; font-weight: bold; display: inline-block; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body { 
+    font-family: 'Inter', sans-serif; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    background-color: #0f172a; 
+    color: white; 
+    margin: 0; 
+}
+.card { 
+    background: #1e293b; 
+    padding: 2.5rem; 
+    border-radius: 16px; 
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); 
+    text-align: center; 
+    border: 1px solid #334155; 
+    max-width: 350px;
+}
+h1 { color: #f8fafc; font-size: 1.5rem; margin-bottom: 0.5rem; }
+p { color: #94a3b8; font-size: 0.9rem; }
+
+/* The Status Pill */
+.status { 
+    margin: 1.5rem 0; 
+    padding: 0.4rem 1rem; 
+    background: rgba(16, 185, 129, 0.1); 
+    color: #10b981; 
+    border: 1px solid #10b981;
+    border-radius: 99px; 
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Modernizing the List */
+ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 1rem; }
+li { 
+    background: #334155; 
+    padding: 5px 12px; 
+    border-radius: 6px; 
+    font-size: 0.75rem; 
+    color: #cbd5e1;
+}
+
+/* The Professional Button */
+.btn { 
+    display: inline-block;
+    margin-top: 2rem;
+    background: #38bdf8; 
+    color: #0f172a; 
+    padding: 0.8rem 1.5rem; 
+    border-radius: 8px; 
+    text-decoration: none; 
+    font-weight: bold;
+    transition: all 0.2s ease; /* This makes the hover smooth */
+}
+
+.btn:hover { 
+    background: #7dd3fc; 
+    transform: translateY(-2px); /* Lifts the button up slightly */
+    box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.4);
+}
     </style>
 </head>
 <body>
@@ -17,6 +75,15 @@
         <h1>Mission: Remote Dev 2026</h1>
         <p>Current Status: Learning Fundamentals & Git</p>
         <div class="status">Day 1: Code Base Established</div>
+        <div class="skills">
+             <p>Focusing on:</p>
+            <ul>
+                <li>Frontend Architecture</li>
+                <li>AI Implementation</li>
+                <li>Remote Collaboration</li>
+            </ul>
+        </div>
+<a href="mailto:your-email@example.com" class="btn">Contact for Projects</a>
     </div>
 </body>
 </html>
