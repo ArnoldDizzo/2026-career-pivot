@@ -85,5 +85,21 @@ li {
         </div>
 <a href="mailto:your-email@example.com" class="btn">Contact for Projects</a>
     </div>
+<script>
+    // 1. Create a variable to store the current hour (0 to 23)
+    const currentHour = new Date().getHours();
+    
+    // 2. Find the paragraph tag that we want to change
+    const statusText = document.querySelector('p');
+
+    // 3. The Logic: If/Else statements
+    if (currentHour < 12) {
+        statusText.innerText = "Good Morning! Ready to code?";
+    } else if (currentHour < 18) {
+        statusText.innerText = "Good Afternoon! Keep pushing.";
+    } else {
+        statusText.innerText = "Good Evening! Deep work session.";
+    }
+</script>    
 </body>
 </html>
