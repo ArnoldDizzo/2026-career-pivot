@@ -3,103 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Roadmap 2026</title>
+    <title>Arnold | Developer Roadmap 2026</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
         body { 
-    font-family: 'Inter', sans-serif; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    min-height: 100vh; 
-    background-color: #0f172a; 
-    color: white; 
-    margin: 0; 
-}
-.card { 
-    background: #1e293b; 
-    padding: 2.5rem; 
-    border-radius: 16px; 
-    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); 
-    text-align: center; 
-    border: 1px solid #334155; 
-    max-width: 350px;
-}
-h1 { color: #f8fafc; font-size: 1.5rem; margin-bottom: 0.5rem; }
-p { color: #94a3b8; font-size: 0.9rem; }
+            font-family: 'Inter', sans-serif; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            min-height: 100vh; background-color: #0f172a; color: #f8fafc; margin: 0; 
+            transition: background 0.3s ease; 
+        }
 
-/* The Status Pill */
-.status { 
-    margin: 1.5rem 0; 
-    padding: 0.4rem 1rem; 
-    background: rgba(16, 185, 129, 0.1); 
-    color: #10b981; 
-    border: 1px solid #10b981;
-    border-radius: 99px; 
-    font-size: 0.8rem;
-    font-weight: 600;
-}
+        #toggleTheme {
+            margin-bottom: 2rem; padding: 0.6rem 1.2rem; cursor: pointer;
+            background: #334155; color: white; border: 1px solid #475569;
+            border-radius: 8px; font-weight: 600;
+        }
 
-/* Modernizing the List */
-ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 1rem; }
-li { 
-    background: #334155; 
-    padding: 5px 12px; 
-    border-radius: 6px; 
-    font-size: 0.75rem; 
-    color: #cbd5e1;
-}
+        .card { 
+            background: #1e293b; padding: 2.5rem; border-radius: 16px; 
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); text-align: center; 
+            border: 1px solid #334155; max-width: 350px;
+        }
 
-/* The Professional Button */
-.btn { 
-    display: inline-block;
-    margin-top: 2rem;
-    background: #38bdf8; 
-    color: #0f172a; 
-    padding: 0.8rem 1.5rem; 
-    border-radius: 8px; 
-    text-decoration: none; 
-    font-weight: bold;
-    transition: all 0.2s ease; /* This makes the hover smooth */
-}
+        h1 { font-size: 1.5rem; margin-bottom: 0.5rem; color: #38bdf8; }
+        p { color: #94a3b8; line-height: 1.5; }
 
-.btn:hover { 
-    background: #7dd3fc; 
-    transform: translateY(-2px); /* Lifts the button up slightly */
-    box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.4);
-}
+        .status { 
+            margin: 1.5rem 0; padding: 0.4rem 1rem; background: rgba(16, 185, 129, 0.1); 
+            color: #10b981; border: 1px solid #10b981; border-radius: 99px; 
+            font-size: 0.8rem; font-weight: 600; display: inline-block;
+        }
+
+        ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+        li { background: #334155; padding: 5px 12px; border-radius: 6px; font-size: 0.75rem; color: #cbd5e1; }
+
+        .btn { 
+            display: inline-block; margin-top: 2rem; background: #38bdf8; color: #0f172a; 
+            padding: 0.8rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: bold;
+            transition: transform 0.2s ease;
+        }
+        .btn:hover { transform: translateY(-3px); background: #7dd3fc; }
+
+        .light-mode { background-color: #f8fafc; color: #1e293b; }
+        .light-mode .card { background: white; border: 1px solid #e2e8f0; }
+        .light-mode p { color: #64748b; }
+        .light-mode li { background: #e2e8f0; color: #475569; }
     </style>
 </head>
 <body>
+    <button id="toggleTheme">Switch to Light Mode</button>
     <div class="card">
         <h1>Mission: Remote Dev 2026</h1>
-        <p>Current Status: Learning Fundamentals & Git</p>
+        <p id="greeting">Loading status...</p>
         <div class="status">Day 1: Code Base Established</div>
-        <div class="skills">
-             <p>Focusing on:</p>
-            <ul>
-                <li>Frontend Architecture</li>
-                <li>AI Implementation</li>
-                <li>Remote Collaboration</li>
-            </ul>
-        </div>
-<a href="mailto:your-email@example.com" class="btn">Contact for Projects</a>
+        <p>Focusing on:</p>
+        <ul>
+            <li>Frontend Architecture</li>
+            <li>AI Implementation</li>
+            <li>Remote Collaboration</li>
+        </ul>
+        <a href="mailto:your-email@example.com" class="btn">Contact for Projects</a>
     </div>
-<script>
-    // 1. Create a variable to store the current hour (0 to 23)
-    const currentHour = new Date().getHours();
-    
-    // 2. Find the paragraph tag that we want to change
-    const statusText = document.querySelector('p');
 
-    // 3. The Logic: If/Else statements
-    if (currentHour < 12) {
-        statusText.innerText = "Good Morning! Ready to code?";
-    } else if (currentHour < 18) {
-        statusText.innerText = "Good Afternoon! Keep pushing.";
-    } else {
-        statusText.innerText = "Good Evening! Deep work session.";
-    }
-</script>    
+    <script>
+        const hour = new Date().getHours();
+        const greet = document.getElementById("greeting");
+        if (hour < 12) greet.innerText = "Good Morning! Ready to code?";
+        else if (hour < 18) greet.innerText = "Good Afternoon! Keep pushing.";
+        else greet.innerText = "Good Evening! Deep work session.";
+
+        const btn = document.getElementById("toggleTheme");
+        btn.addEventListener("click", function() {
+            document.body.classList.toggle("light-mode");
+            if (document.body.classList.contains("light-mode")) {
+                btn.innerText = "Switch to Dark Mode";
+            } else {
+                btn.innerText = "Switch to Light Mode";
+            }
+        });
+    </script>
 </body>
 </html>
